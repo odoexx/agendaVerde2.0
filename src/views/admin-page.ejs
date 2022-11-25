@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/header.ejs') %>
+
+    <title>Administrador</title>
+</head>
+<body>
+    <%- include('partials/navigation.ejs') %>
+
+    <% ecoActividad.forEach(function (ecoActividad) { %>
+
+        <% if(ecoActividad.estado == "pendiente"){ %>
+
+            <div class="container p-4">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <%= ecoActividad.titulo %> / <%= ecoActividad.autor %>
+                        </div>
+                        <div class="card-body">
+                            <p><%= ecoActividad.descripcion %> / <%= ecoActividad.estado %></p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="/enable/<%= ecoActividad.id %>/<%= ecoActividad.titulo %>/<%= ecoActividad.autor %>/<%= ecoActividad.imagen %>/<%= ecoActividad.descripcion %>/<%= ecoActividad.estado %>" class="btn btn-primary">
+                                ACEPTAR
+                            </a>
+                            <a href="/desable/<%= ecoActividad.id %>" class="btn btn-danger">
+                                RECHASAR
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <% } %>
+        
+    <% }) %>
+</body>
+</html>

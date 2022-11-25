@@ -1,0 +1,17 @@
+.bienvenida{
+    text-align: center;
+}
+
+.bienvenida h2{
+    margin-top: 10px;
+    
+}
+
+.bienvenida h1{
+    font-size: 100px;
+}
+
+.bienvenida img {
+    width: 22vw;
+    margin-bottom: 20vh;
+}

@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Balsamic Sans';
+}
+
+body{
+    background: #efefef;
+}
+
+.navbar{
+    background-color: #71cc87;
+}
+
+.navbar-brand img{
+    width: 45px;
+}
+
+.nav-item{
+    font-size: 25px;
+}

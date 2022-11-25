@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/header.ejs') %>
+
+    <link rel="stylesheet" href="../style/huellaCarbono.css" />
+    <title>Calculadora de Huella de Carbono</title>
+  </head>
+  <body>
+    <%- include('partials/navigation.ejs') %>
+
+    <div class="bienvenida">
+      <h1>Eco-huella</h1>
+      <h2>Calcula tu huella de carbono</h2>
+      <div class="logoHuella">
+        <img src="./img/EcoHuella.png" alt="logo" />
+        <form action="/cuestionario">
+          <button>SIGUIENTE</button>
+        </form>
+      </div>
+    </div>
+
+    <%- include('partials/toast.ejs')%>
+  </body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/header.ejs') %>
+
+    <link rel="stylesheet" href="../style/huellaCarbono.css">
+    <title>Calculadora Huella de Carbono</title>
+  </head>
+  <body>
+    <%- include('partials/navigation.ejs') %>
+
+    <div class="Preguntas">
+      <h1>INICIO</h1>
+      <section id="p0">
+        <h2>¿Tiene artefactos electronicos?</h2>
+        <label> <input type="radio" value="1" name="p0" /> Si tengo </label>
+        <label> <input type="radio" value="2" name="p0" /> No tengo </label>
+      </section>
+      <section>
+        <h2>1. Indique cuantas horas en promedio los utiliza</h2>
+        <label>
+          <input
+            type="number"
+            values="1"
+            name="p1"
+            id="p1"
+            onclick="respuesta(1,this)"
+          />
+          PC de escritorio
+        </label>
+        <label>
+          <input
+            type="number"
+            values="2"
+            name="p2"
+            id="p2"
+            onclick="respuesta(2,this)"
+          />
+          PC portatil
+        </label>
+        <label>
+          <input
+            type="number"
+            values="3"
+            name="p3"
+            id="p3"
+            onclick="respuesta(3,this)"
+          />
+          Televisor
+        </label>
+      </section>
+      <section>
+        <h2>2. Señale el tipo de Heladera que utiliza</h2>
+        <label>
+          <input
+            type="radio"
+            value="1"
+            name="p4"
+            id="p4"
+            onclick="respuesta(4,this)"
+          />
+          Clase A+
+        </label>
+        <label>
+          <input
+            type="radio"
+            value="2"
+            name="p4"
+            id="p4"
+            onclick="respuesta(4,this)"
+          />
+          Clase A
+        </label>
+        <label>
+          <input
+            type="radio"
+            value="3"
+            name="p4"
+            id="p4"
+            onclick="respuesta(4,this)"
+          />
+          Clase B
+        </label>
+      </section>
+      <section>
+        <h2>3. Señale el tipo de lavarropas que posee</h2>
+        <label>
+          <input
+            type="radio"
+            value="1"
+            name="p5"
+            id="p5"
+            onclick="respuesta(5,this)"
+          />
+          Automatico
+        </label>
+        <label>
+          <input
+            type="radio"
+            value="2"
+            name="p5"
+            id="p5"
+            onclick="respuesta(5,this)"
+          />
+          Automatico con calentamiento de agua
+        </label>
+        <label>
+          <input
+            type="radio"
+            value="3"
+            name="p5"
+            id="p5"
+            onclick="respuesta(5,this)"
+          />
+          Semiautomatico
+        </label>
+      </section>
+      <section>
+        <h2>Periodo de uso</h2>
+        <label>
+          <input
+            type="number"
+            values="1"
+            name="p6"
+            id="p6"
+            onclick="respuesta(6,this)"
+          />
+          Cantidad de veces a la semana
+        </label>
+        <label>
+          <input
+            type="number"
+            values="2"
+            name="p7"
+            id="p7"
+            onclick="respuesta(7,this)"
+          />
+          Horas de uso al dia
+        </label>
+      </section>
+      <section>
+        <h2>
+          4. En el caso que utilize Pava electrica, indique el tiempo de uso en
+          minutos
+        </h2>
+        <label>
+          <input
+            type="number"
+            value="1"
+            name="p8"
+            id="p8"
+            onclick="respuesta(8,this)"
+          />
+          minutos
+        </label>
+        <h2>
+          5. En el caso que utilize Microondas, indique el tiempo de uso en
+          minutos
+        </h2>
+        <label>
+          <input
+            type="number"
+            value="1"
+            name="p9"
+            id="p9"
+            onclick="respuesta(9,this)"
+          />
+          minutos
+        </label>
+      </section>
+      <section>
+        <h2>6.¿Cuantos focos o laparas incandescentes tiene?</h2>
+        <label>
+          <input
+            type="number"
+            values="1"
+            name="p10"
+            id="p10"
+            onclick="respuesta(10,this)"
+          />
+          Focos
+        </label>
+        <label>
+          <input
+            type="number"
+            values="2"
+            name="p11"
+            id="p11"
+            onclick="respuesta(11,this)"
+          />
+          Lamparas
+        </label>
+      </section>
+    </div>
+    <button onclick="corregir()">CALCULAR</button>
+    <!--<button href="#"  onClick=
+    "if (document.getElementById('p1').value>0){
+     window.location='#calcu1';
+    }else alert('¿Cuántas horas?');">SIGUIENTE</button>-->
+    <h2>Resultados: <span id="resultado"></span></h2>
+    <form action="/calculadora">
+      <button>CANCELAR</button>
+    </form>
+
+    <script src="../scripts/calculos.js"></script>
+  </body>
+</html>
