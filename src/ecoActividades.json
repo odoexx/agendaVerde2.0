@@ -1,34 +1,26 @@
 [
     {
-        "id": "661b1113-6b6d-417f-a6e9-fbaec6182228",
+        "id": "7fc47ccf-d304-4bbe-9f3f-d35fb5af5b23",
+        "titulo": "libro para aceptar",
+        "autor": "yo",
+        "imagen": "imagen",
+        "descripcion": "aceptar",
+        "estado": "aceptado"
+    },
+    {
+        "id": "a7de9436-e04c-4372-a724-e3192ebe4106",
+        "titulo": "libro para rechazar",
+        "autor": "no yo",
+        "imagen": "imagen",
+        "descripcion": "rechazar",
+        "estado": "rechazado"
+    },
+    {
+        "id": "aabe5294-5601-4fbf-b71e-993872678c72",
         "titulo": "La odisea",
-        "autor": "German",
-        "imagen": "link de la imagen",
+        "autor": "Homero",
+        "imagen": "imagen",
         "descripcion": "hola",
-        "estado": "aceptado"
-    },
-    {
-        "id": "55439c77-960f-4093-b2d8-9a8348c2bd75",
-        "titulo": "La odisea",
-        "autor": "German",
-        "imagen": "link de la imagen",
-        "descripcion": "hola",
-        "estado": "aceptado"
-    },
-    {
-        "id": "4b34612e-15cc-4e45-86b8-9137ff955eb1",
-        "titulo": "pasar",
-        "autor": "este se pasa",
-        "imagen": "imagne",
-        "descripcion": "este libro se pasa",
-        "estado": "aceptado"
-    },
-    {
-        "id": "a8c82fb8-b399-46b4-8b5f-896e1ded40e7",
-        "titulo": "El principito",
-        "autor": "nose",
-        "imagen": "link de la imagen",
-        "descripcion": "cuento corto para todas las edades",
         "estado": "aceptado"
     }
 ]

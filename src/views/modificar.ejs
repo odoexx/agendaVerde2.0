@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/header.ejs') %>
+    <title>Modificar</title>
+</head>
+<body>
+
+    <style>
+        body{
+            padding: 2vw;
+        }
+        /* hay que darle el estilo desde aca */
+    </style>
+
+    <div class="container p-4">
+        <form method="POST" action="/modificar">
+            <div class="form-group">
+                <input type="text" class="form-control" name="id" id="id" value="<%= id%>" required>
+            </div>
+            <div class="form-group">
+                <label for="titulo">Titulo</label>
+                <input type="text" class="form-control" name="titulo" id="titulo" value="<%= titulo%>" required>
+            </div>
+            <div class="form-group">
+                <label for="autor">Autor</label>
+                <input type="text" class="form-control" name="autor" id="autor" value="<%= autor%>" required>
+            </div>
+            <div class="form-group">
+                <label for="imagen">Imagen</label>
+                <input type="text" class="form-control" name="imagen" id="imagen" value="<%= imagen%>"  required>
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripcion</label>
+                <input class="from-control" name="descripcion" id="descripcion" rows="2"  value="<%= descripcion%>" required></input>
+            </div>
+            <div class="form-group">
+                <label for="estado">Estado</label>
+                <input class="from-control" name="estado" id="estado" rows="2"  value="<%= estado%>" required></input>
+            </div>
+            <input type="submit" value="Guardar" class="btn btn-primary">
+            <a class="btn btn-danger" href="/admin-page">Salir</a>
+        </form>
+    
+</body>
+</html>
