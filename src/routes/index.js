@@ -39,6 +39,18 @@ router.get('/admin-page', (req,res) => {
     })
 });
 
+router.get('/modificar/:id/:titulo/:autor/:imagen/:descripcion/:estado', (req, res) => {
+    const {id, titulo, autor, imagen, descripcion, estado} = req.params;
+    res.render('modificar.ejs',{
+        id,
+        titulo,
+        autor,
+        imagen,
+        descripcion,
+        estado
+    })
+});
+
 
 
 //eliminar
@@ -63,7 +75,6 @@ router.get('/enable/:id/:titulo/:autor/:imagen/:descripcion/:estado', (req, res)
         descripcion: descripcion,
         estado: 'aceptado'
     };
-    console.log(newEcoActividad);
     ecoActividad.push(newEcoActividad);
 
 
@@ -76,11 +87,27 @@ router.get('/enable/:id/:titulo/:autor/:imagen/:descripcion/:estado', (req, res)
 });
 
 //rechasar
-router.get('/desable/:id', (req, res) => {
-    //se puede cambiar el estado a rechazado en vez de eliminarlo
+router.get('/desable/:id/:titulo/:autor/:imagen/:descripcion/:estado', (req, res) => {
+    //aca se tiene que cambiar el estado de la ecoActividad
+    //tomo los datos de la ecoActividad
+    const {titulo, autor, imagen, descripcion} = req.params;
+    //creo un nuevo objeto con los datos viejo, y actualizo algunos
+    let newEcoActividad = {
+        id: uuidv4(),
+        titulo: titulo,
+        autor: autor,
+        imagen: imagen,
+        descripcion: descripcion,
+        estado: 'rechazado'
+    };
+    ecoActividad.push(newEcoActividad);
+
+
+    //elimino el dato viejo
     ecoActividad = ecoActividad.filter(ecoActividad => ecoActividad.id != req.params.id);
     const jsonEcoActividad = JSON.stringify(ecoActividad);
     fs.writeFileSync('src/ecoActividades.json', jsonEcoActividad, 'utf-8');
+
     res.redirect('/admin-page');
 });
 
@@ -110,6 +137,36 @@ router.post('/new-entry', (req, res) => {
 
     //luego de presionar en guardar lo envia al new-entry
     res.redirect('/new-entry');
+});
+
+//modificar datos
+router.post('/modificar', (req, res) => {
+    const {id, titulo, autor, imagen, descripcion } = req.body;
+
+    //valido que todos los campos esten cargados
+    if(!titulo || !autor || !imagen || !descripcion){
+        res.status(400).send('Escribe todos los campos');
+        return;
+    }
+
+    let newEcoActividad = {
+        id: uuidv4(),
+        titulo: titulo,
+        autor: autor,
+        imagen: imagen,
+        descripcion: descripcion,
+        estado: 'aceptado'
+    };
+
+    ecoActividad.push(newEcoActividad);
+
+    
+    ecoActividad = ecoActividad.filter(ecoActividad => ecoActividad.id != id);
+    const jsonEcoActividad = JSON.stringify(ecoActividad);
+    fs.writeFileSync('src/ecoActividades.json', jsonEcoActividad, 'utf-8');
+    
+    //luego de presionar en guardar lo envia al new-entry
+    res.redirect('/admin-page');
 });
 
 //inicio de sesion
