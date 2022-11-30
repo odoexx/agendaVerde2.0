@@ -1,3 +1,7 @@
 .estado{
     visibility: hidden;
 }
+
+.titulo{
+    text-align: center;
+}

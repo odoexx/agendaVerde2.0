@@ -1,46 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <%- include('partials/header.ejs') %>
     <title>Modificar</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <style>
-        body{
-            padding: 2vw;
-        }
-        /* hay que darle el estilo desde aca */
+      body {
+        padding: 2vw;
+      }
+      .form-control-id{
+        opacity: 0;
+      }
+      /* hay que darle el estilo desde aca */
     </style>
 
-    <div class="container p-4">
-        <form method="POST" action="/modificar">
-            <div class="form-group">
-                <input type="text" class="form-control" name="id" id="id" value="<%= id%>" required>
-            </div>
-            <div class="form-group">
-                <label for="titulo">Titulo</label>
-                <input type="text" class="form-control" name="titulo" id="titulo" value="<%= titulo%>" required>
-            </div>
-            <div class="form-group">
-                <label for="autor">Autor</label>
-                <input type="text" class="form-control" name="autor" id="autor" value="<%= autor%>" required>
-            </div>
-            <div class="form-group">
-                <label for="imagen">Imagen</label>
-                <input type="text" class="form-control" name="imagen" id="imagen" value="<%= imagen%>"  required>
-            </div>
-            <div class="form-group">
-                <label for="descripcion">Descripcion</label>
-                <input class="from-control" name="descripcion" id="descripcion" rows="2"  value="<%= descripcion%>" required></input>
-            </div>
-            <div class="form-group">
-                <label for="estado">Estado</label>
-                <input class="from-control" name="estado" id="estado" rows="2"  value="<%= estado%>" required></input>
-            </div>
-            <input type="submit" value="Guardar" class="btn btn-primary">
-            <a class="btn btn-danger" href="/admin-page">Salir</a>
-        </form>
-    
-</body>
+<h1 class="titulo">Formulario de Eco-Actividad</h1>
+<h3 class="titulo">Datos de la Eco-Actividad</h3>
+
+<div class="container">
+    <form class="row g-3 mt-3" method="POST" action="/modificar">
+
+      <div class="col-12">
+        <input type="text" class="form-control-id" name="id" id="id" value="<%= id%>" required/>
+      </div>
+
+      <div class="col-12">
+          <label for="nombreEcoActividad" class="from-label"> Nombre de la Eco-Actividad</label>
+          <input type="text" class="form-control" name="nombreEcoActividad" id="nombreEcoActividad" value="<%= nombreEcoActividad%>" required>
+      </div>
+
+      <div class="col-1">
+          <label for="diaEcoActividad" class="from-label">Dia</label>
+          <select class="form-select" name="diaEcoActividad" id="diaEcoActividad" required>
+            <option selected disabled value="<%= diaEcoActividad%>"><%= diaEcoActividad%></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="1">16</option>
+            <option value="2">17</option>
+            <option value="3">18</option>
+            <option value="4">19</option>
+            <option value="5">20</option>
+            <option value="6">21</option>
+            <option value="7">22</option>
+            <option value="8">23</option>
+            <option value="9">24</option>
+            <option value="10">25</option>
+            <option value="11">26</option>
+            <option value="12">27</option>
+            <option value="13">28</option>
+            <option value="14">29</option>
+            <option value="15">30</option>
+            <option value="15">31</option>
+          </select>
+      </div>
+
+      <div class="col-3">
+          <label for="mesEcoActividad" class="from-label">Mes</label>
+          <select class="form-select" name="mesEcoActividad" id="mesEcoActividad" required>
+            <option selected disabled value="<%= mesEcoActividad%>"><%= mesEcoActividad%></option>
+            <option value="Enero">Enero</option>
+            <option value="Febrero">Febrero</option>
+            <option value="Marzo">Marzo</option>
+            <option value="Abril">Abril</option>
+            <option value="Mayo">Mayo</option>
+            <option value="Junio">Junio</option>
+            <option value="Julio">Julio</option>
+            <option value="Agosto">Agosto</option>
+            <option value="Septiembre">Septiembre</option>
+            <option value="Octubre">Octubre</option>
+            <option value="Noviembre">Noviembre</option>
+            <option value="Diciembre">Diciembre</option>
+          </select>
+      </div>
+
+      <div class="col-2">
+          <label for="anoEcoActividad" class="from-label">Año</label>
+          <select class="form-select" name="anoEcoActividad" id="anoEcoActividad" required>
+            <option selected disabled value="<%= anoEcoActividad%>"><%= anoEcoActividad%></option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+          </select>
+      </div>
+
+      <div class="col-3">
+          <label for="horaInicioEcoActividad" class="from-label">Hora de inicio de la Eco-Actividad</label>
+          <input type="time" class="form-control" name="horaInicioEcoActividad" id="horaInicioEcoActividad" value="<%= horaInicioEcoActividad%>" required>
+      </div>
+      
+      <div class="col-3">
+          <label for="horaFinEcoActividad" class="from-label">Hora de fin de la Eco-Actividad</label>
+          <input type="time" class="form-control" name="horaFinEcoActividad" id="horaFinEcoActividad" value="<%= horaFinEcoActividad%>" required>
+      </div>
+
+      <div class="col-6">
+          <label for="ubicacionEcoActividad" class="from-label">Ubicacion</label>
+          <input type="text" class="form-control" name="ubicacionEcoActividad" id="ubicacionEcoActividad" value="<%= ubicacionEcoActividad%>" required>
+      </div>
+
+      <div class="col-6 mb-3">
+          <label for="departamentoEcoActividad" class="from-label">Departamento</label>
+          <select class="form-select" name="departamentoEcoActividad" id="departamentoEcoActividad" required>
+            <option selected disabled value="<%= departamentoEcoActividad%>"><%= departamentoEcoActividad%></option>
+            <option value="Santa Catalina">Santa Catalina</option>
+            <option value="Rinconada">Rinconada</option>
+            <option value="Cochinoca">Cochinoca</option>
+            <option value="Humahuaca">Humahuaca</option>
+            <option value="Susques">Susques</option>
+            <option value="Tumbaya">Tumbaya</option>
+            <option value="Tilcara">Tilcara</option>
+            <option value="Valle Grande">Valle Grande</option>
+            <option value="Dr. Manuel Belgrano">Dr. Manuel Belgrano</option>
+            <option value="San Antonio">San Antonio</option>
+            <option value="Palpala">Palpala</option>
+            <option value="San Pedro">San Pedro</option>
+            <option value="El Carmen">El Carmen</option>
+            <option value="Santa Barbara">Santa Barbara</option>
+            <option value="Yavi">Yavi</option>
+          </select>
+      </div>
+
+      <div class="col-12">
+          <label for="detallesEcoActividad" class="from-label">Detalles de la Eco-Actividad</label>
+          <input type="text" class="form-control" name="detallesEcoActividad" id="detallesEcoActividad" value="<%= detallesEcoActividad%>" required>
+      </div>
+
+      <h3 class="titulo">Datos del Encargado</h3>
+
+      <div class="col-6">
+          <label for="nombreEncargado" class="from-label">Nombre</label>
+          <input type="text" class="form-control" name="nombreEncargado" id="nombreEncargado" value="<%= nombreEncargado%>" required>
+      </div>
+
+      <div class="col-6">
+          <label for="apellidoEncargado" class="from-label">Apellido</label>
+          <input type="text" class="form-control" name="apellidoEncargado" id="apellidoEncargado" value="<%= apellidoEncargado%>" required>
+      </div>
+
+      <div class="col-6">
+          <label for="dniEncargado" class="from-label">DNI</label>
+          <input type="number" class="form-control" name="dniEncargado" id="dniEncargado" value="<%= dniEncargado%>" required>
+      </div>
+
+      <div class="col-6">
+          <label for="numeroEncargado" class="from-label">Numero de telefono</label>
+          <input type="number" class="form-control" name="numeroEncargado" id="numeroEncargado" value="<%= numeroEncargado%>" required>
+      </div>
+
+      <div class="col-12">
+          <label for="gmaiEncargado" class="from-label">Gmail</label>
+          <input type="email" class="form-control" name="gmaiEncargado" id="gmaiEncargado" value="<%= gmaiEncargado%>" required>
+      </div>
+
+      <div class="col-6 mb-3">
+        <label for="estado" class="from-label">estado</label>
+        <select class="form-select" name="estado" id="estado" required>
+          <option selected value="<%= estado%>"> <%= estado%> </option>
+          <option value="aceptado">aceptado</option>
+          <option value="rechazado">rechazado</option>
+        </select>
+      </div>
+
+      <div class="col-12">
+          <input type="submit" value="Registra Eco-Actividad" class="btn btn-primary">
+      </div>
+      <a class="btn btn-danger" href="/admin-page">Salir</a>
+    </form>
+  </div>
+  </body>
 </html>

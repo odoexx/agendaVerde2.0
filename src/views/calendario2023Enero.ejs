@@ -3,7 +3,7 @@
   <head>
     <%- include('partials/header.ejs') %>
 
-    <link rel="stylesheet" href="../style/calendario.css" />
+    <link rel="stylesheet" href="../style/calendario2023Enero.css" />
     <title>Calendario de Eco-Actividades</title>
   </head>
   <body>
@@ -11,8 +11,8 @@
     <div class="conteiner">
       <div class="calendario">
         <div class="calendarioHeader">
-          <a class="btnHeader">-</a>
-          <h1>Diciembre 2022</h1>
+          <a class="btnHeader" href="/calendario">-</a>
+          <h1>Enero 2023</h1>
           <a class="btnHeader" href="/calendario2023Enero">+</a>
         </div>
 
@@ -60,7 +60,7 @@
       <div class="ecoActividades">
         <% ecoActividad.forEach(function (ecoActividad) { %>
 
-          <% if(ecoActividad.estado == "aceptado" && ecoActividad.mesEcoActividad == "Diciembre" && ecoActividad.anoEcoActividad == "2022"){ %>
+          <% if(ecoActividad.estado == "aceptado" && ecoActividad.mesEcoActividad == "Enero" && ecoActividad.anoEcoActividad == "2023"){ %>
   
             <div class="container p-4">
               <div class="col-md-4">
