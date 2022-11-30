@@ -17,6 +17,12 @@ router.get('/calendario', (req, res) => {
     });
 });
 
+router.get('/calendario2023Enero', (req, res) => {
+    res.render('calendario2023Enero', {
+        ecoActividad
+    });
+});
+
 router.get('/calculadora', (req,res) => {
     res.render('huellaCarbono');
 })
@@ -39,19 +45,26 @@ router.get('/admin-page', (req,res) => {
     })
 });
 
-router.get('/modificar/:id/:titulo/:autor/:imagen/:descripcion/:estado', (req, res) => {
-    const {id, titulo, autor, imagen, descripcion, estado} = req.params;
-    res.render('modificar.ejs',{
-        id,
-        titulo,
-        autor,
-        imagen,
-        descripcion,
-        estado
+router.get('/all-ecoActividades', (req,res) => {
+    res.render('all-ecoActividades', {
+        ecoActividad
     })
 });
 
-
+// cargar la pantalla de modificar
+router.get('/modificar/:id/:nombreEcoActividad/:diaEcoActividad/:mesEcoActividad/:anoEcoActividad/:horaInicioEcoActividad/:horaFinEcoActividad/:ubicacionEcoActividad/:departamentoEcoActividad/:detallesEcoActividad/:nombreEncargado/:apellidoEncargado/:dniEncargado/:numeroEncargado/:gmaiEncargado/:estado', (req, res) => {
+    const { id, nombreEcoActividad, diaEcoActividad, mesEcoActividad, anoEcoActividad,
+        horaInicioEcoActividad, horaFinEcoActividad, ubicacionEcoActividad, 
+        departamentoEcoActividad, detallesEcoActividad, nombreEncargado, apellidoEncargado, 
+        dniEncargado, numeroEncargado, gmaiEncargado, estado
+     } = req.params;
+    res.render('modificar.ejs',{
+        id, nombreEcoActividad, diaEcoActividad, mesEcoActividad, anoEcoActividad,
+        horaInicioEcoActividad, horaFinEcoActividad, ubicacionEcoActividad, 
+        departamentoEcoActividad, detallesEcoActividad, nombreEncargado, apellidoEncargado, 
+        dniEncargado, numeroEncargado, gmaiEncargado, estado
+    })
+});
 
 //eliminar
 router.get('/delete/:id', (req, res) => {
@@ -62,17 +75,31 @@ router.get('/delete/:id', (req, res) => {
 });
 
 //aceptar
-router.get('/enable/:id/:titulo/:autor/:imagen/:descripcion/:estado', (req, res) => {
-    //aca se tiene que cambiar el estado de la ecoActividad
+router.get('/enable/:id/:nombreEcoActividad/:diaEcoActividad/:mesEcoActividad/:anoEcoActividad/:horaInicioEcoActividad/:horaFinEcoActividad/:ubicacionEcoActividad/:departamentoEcoActividad/:detallesEcoActividad/:nombreEncargado/:apellidoEncargado/:dniEncargado/:numeroEncargado/:gmaiEncargado', (req, res) => {
     //tomo los datos de la ecoActividad
-    const {titulo, autor, imagen, descripcion} = req.params;
+    const { nombreEcoActividad, diaEcoActividad, mesEcoActividad, anoEcoActividad,
+        horaInicioEcoActividad, horaFinEcoActividad, ubicacionEcoActividad, 
+        departamentoEcoActividad, detallesEcoActividad, nombreEncargado, apellidoEncargado, 
+        dniEncargado, numeroEncargado, gmaiEncargado
+     } = req.params;
+
     //creo un nuevo objeto con los datos viejo, y actualizo algunos
     let newEcoActividad = {
         id: uuidv4(),
-        titulo: titulo,
-        autor: autor,
-        imagen: imagen,
-        descripcion: descripcion,
+        nombreEcoActividad : nombreEcoActividad,
+        diaEcoActividad : diaEcoActividad,
+        mesEcoActividad : mesEcoActividad,
+        anoEcoActividad : anoEcoActividad,
+        horaInicioEcoActividad : horaInicioEcoActividad,
+        horaFinEcoActividad : horaFinEcoActividad,
+        ubicacionEcoActividad : ubicacionEcoActividad,
+        departamentoEcoActividad : departamentoEcoActividad,
+        detallesEcoActividad : detallesEcoActividad, 
+        nombreEncargado : nombreEncargado, 
+        apellidoEncargado : apellidoEncargado, 
+        dniEncargado : dniEncargado, 
+        numeroEncargado : numeroEncargado,
+        gmaiEncargado : gmaiEncargado,
         estado: 'aceptado'
     };
     ecoActividad.push(newEcoActividad);
@@ -86,18 +113,31 @@ router.get('/enable/:id/:titulo/:autor/:imagen/:descripcion/:estado', (req, res)
     res.redirect('/admin-page');
 });
 
-//rechasar
-router.get('/desable/:id/:titulo/:autor/:imagen/:descripcion/:estado', (req, res) => {
-    //aca se tiene que cambiar el estado de la ecoActividad
+//rechazar
+router.get('/desable/:id/:nombreEcoActividad/:diaEcoActividad/:mesEcoActividad/:anoEcoActividad/:horaInicioEcoActividad/:horaFinEcoActividad/:ubicacionEcoActividad/:departamentoEcoActividad/:detallesEcoActividad/:nombreEncargado/:apellidoEncargado/:dniEncargado/:numeroEncargado/:gmaiEncargado', (req, res) => {
     //tomo los datos de la ecoActividad
-    const {titulo, autor, imagen, descripcion} = req.params;
+    const { nombreEcoActividad, diaEcoActividad, mesEcoActividad, anoEcoActividad,
+        horaInicioEcoActividad, horaFinEcoActividad, ubicacionEcoActividad, 
+        departamentoEcoActividad, detallesEcoActividad, nombreEncargado, apellidoEncargado, 
+        dniEncargado, numeroEncargado, gmaiEncargado
+     } = req.params;
     //creo un nuevo objeto con los datos viejo, y actualizo algunos
     let newEcoActividad = {
         id: uuidv4(),
-        titulo: titulo,
-        autor: autor,
-        imagen: imagen,
-        descripcion: descripcion,
+        nombreEcoActividad : nombreEcoActividad,
+        diaEcoActividad : diaEcoActividad,
+        mesEcoActividad : mesEcoActividad,
+        anoEcoActividad : anoEcoActividad,
+        horaInicioEcoActividad : horaInicioEcoActividad,
+        horaFinEcoActividad : horaFinEcoActividad,
+        ubicacionEcoActividad : ubicacionEcoActividad,
+        departamentoEcoActividad : departamentoEcoActividad,
+        detallesEcoActividad : detallesEcoActividad, 
+        nombreEncargado : nombreEncargado, 
+        apellidoEncargado : apellidoEncargado, 
+        dniEncargado : dniEncargado, 
+        numeroEncargado : numeroEncargado,
+        gmaiEncargado : gmaiEncargado,
         estado: 'rechazado'
     };
     ecoActividad.push(newEcoActividad);
@@ -113,20 +153,37 @@ router.get('/desable/:id/:titulo/:autor/:imagen/:descripcion/:estado', (req, res
 
 //cargar nuevo dato
 router.post('/new-entry', (req, res) => {
-    const { titulo, autor, imagen, descripcion } = req.body;
+    const { nombreEcoActividad, diaEcoActividad, mesEcoActividad, anoEcoActividad,
+        horaInicioEcoActividad, horaFinEcoActividad, ubicacionEcoActividad, 
+        departamentoEcoActividad, detallesEcoActividad, nombreEncargado, apellidoEncargado, 
+        dniEncargado, numeroEncargado, gmaiEncargado
+     } = req.body;
 
     //valido que todos los campos esten cargados
-    if(!titulo || !autor || !imagen || !descripcion){
+    if(!nombreEcoActividad || !diaEcoActividad || !mesEcoActividad || !anoEcoActividad || !horaInicioEcoActividad || 
+        !horaFinEcoActividad || !ubicacionEcoActividad || !departamentoEcoActividad || 
+        !detallesEcoActividad || !nombreEncargado || !apellidoEncargado || !dniEncargado || 
+        !numeroEncargado || !gmaiEncargado){
         res.status(400).send('Escribe todos los campos');
         return;
     }
 
     let newEcoActividad = {
         id: uuidv4(),
-        titulo: titulo,
-        autor: autor,
-        imagen: imagen,
-        descripcion: descripcion,
+        nombreEcoActividad : nombreEcoActividad,
+        diaEcoActividad : diaEcoActividad,
+        mesEcoActividad : mesEcoActividad,
+        anoEcoActividad : anoEcoActividad,
+        horaInicioEcoActividad : horaInicioEcoActividad,
+        horaFinEcoActividad : horaFinEcoActividad,
+        ubicacionEcoActividad : ubicacionEcoActividad,
+        departamentoEcoActividad : departamentoEcoActividad,
+        detallesEcoActividad : detallesEcoActividad, 
+        nombreEncargado : nombreEncargado, 
+        apellidoEncargado : apellidoEncargado, 
+        dniEncargado : dniEncargado, 
+        numeroEncargado : numeroEncargado,
+        gmaiEncargado : gmaiEncargado,
         estado: 'pendiente'
     };
 
@@ -141,31 +198,48 @@ router.post('/new-entry', (req, res) => {
 
 //modificar datos
 router.post('/modificar', (req, res) => {
-    const {id, titulo, autor, imagen, descripcion } = req.body;
+    const {id, nombreEcoActividad, diaEcoActividad, mesEcoActividad, anoEcoActividad,
+        horaInicioEcoActividad, horaFinEcoActividad, ubicacionEcoActividad, 
+        departamentoEcoActividad, detallesEcoActividad, nombreEncargado, apellidoEncargado, 
+        dniEncargado, numeroEncargado, gmaiEncargado, estado
+     } = req.body;
 
     //valido que todos los campos esten cargados
-    if(!titulo || !autor || !imagen || !descripcion){
+    if(!nombreEcoActividad || !diaEcoActividad || !mesEcoActividad || !anoEcoActividad || !horaInicioEcoActividad || 
+        !horaFinEcoActividad || !ubicacionEcoActividad || !departamentoEcoActividad || 
+        !detallesEcoActividad || !nombreEncargado || !apellidoEncargado || !dniEncargado || 
+        !numeroEncargado || !gmaiEncargado || !estado){
         res.status(400).send('Escribe todos los campos');
         return;
     }
 
     let newEcoActividad = {
         id: uuidv4(),
-        titulo: titulo,
-        autor: autor,
-        imagen: imagen,
-        descripcion: descripcion,
-        estado: 'aceptado'
+        nombreEcoActividad : nombreEcoActividad,
+        diaEcoActividad : diaEcoActividad,
+        mesEcoActividad : mesEcoActividad,
+        anoEcoActividad : anoEcoActividad,
+        horaInicioEcoActividad : horaInicioEcoActividad,
+        horaFinEcoActividad : horaFinEcoActividad,
+        ubicacionEcoActividad : ubicacionEcoActividad,
+        departamentoEcoActividad : departamentoEcoActividad,
+        detallesEcoActividad : detallesEcoActividad, 
+        nombreEncargado : nombreEncargado, 
+        apellidoEncargado : apellidoEncargado, 
+        dniEncargado : dniEncargado, 
+        numeroEncargado : numeroEncargado,
+        gmaiEncargado : gmaiEncargado,
+        estado: estado
     };
-
-    ecoActividad.push(newEcoActividad);
-
     
     ecoActividad = ecoActividad.filter(ecoActividad => ecoActividad.id != id);
+    
+    ecoActividad.push(newEcoActividad);
+    
     const jsonEcoActividad = JSON.stringify(ecoActividad);
     fs.writeFileSync('src/ecoActividades.json', jsonEcoActividad, 'utf-8');
     
-    //luego de presionar en guardar lo envia al new-entry
+    //luego de presionar en guardar lo envia al admin-page
     res.redirect('/admin-page');
 });
 

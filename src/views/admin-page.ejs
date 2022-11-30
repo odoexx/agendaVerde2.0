@@ -16,20 +16,23 @@
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-header">
-                            <%= ecoActividad.titulo %> / <%= ecoActividad.autor %>
+                            <%= ecoActividad.nombreEcoActividad %> / <%= ecoActividad.nombreEncargado %> <%= ecoActividad.apellidoEncargado %>
                         </div>
                         <div class="card-body">
-                            <p><%= ecoActividad.descripcion %> / <%= ecoActividad.estado %></p>
+                            <p><%= ecoActividad.diaEcoActividad %>/<%= ecoActividad.mesEcoActividad %>/<%= ecoActividad.anoEcoActividad %>  </p>
+                            <p> inicio: <%= ecoActividad.horaInicioEcoActividad %> fin: <%= ecoActividad.horaFinEcoActividad %> </p>
+                            <p><%= ecoActividad.detallesEcoACtividad %></p>
+                            <p>DNI: <%= ecoActividad.dniEncargado %> Celular: <%= ecoActividad.numeroEncargado %> Email: <%= ecoActividad.gmaiEncargado %></p>
                         </div>
                         <div class="card-footer">
-                            <a href="/enable/<%= ecoActividad.id %>/<%= ecoActividad.titulo %>/<%= ecoActividad.autor %>/<%= ecoActividad.imagen %>/<%= ecoActividad.descripcion %>/<%= ecoActividad.estado %>" class="btn btn-primary">
+                            <a href="/enable/<%= ecoActividad.id %>/<%= ecoActividad.nombreEcoActividad %>/<%= ecoActividad.diaEcoActividad %>/<%= ecoActividad.mesEcoActividad %>/<%= ecoActividad.anoEcoActividad %>/<%= ecoActividad.horaInicioEcoActividad %>/<%= ecoActividad.horaFinEcoActividad %>/<%= ecoActividad.ubicacionEcoActividad %>/<%= ecoActividad.departamentoEcoActividad %>/<%= ecoActividad.detallesEcoActividad %>/<%= ecoActividad.nombreEncargado %>/<%= ecoActividad.apellidoEncargado %>/<%= ecoActividad.dniEncargado %>/<%= ecoActividad.numeroEncargado %>/<%= ecoActividad.gmaiEncargado %>" class="btn btn-primary">
                                 ACEPTAR
                             </a>
-                            <a href="/modificar/<%= ecoActividad.id %>/<%= ecoActividad.titulo %>/<%= ecoActividad.autor %>/<%= ecoActividad.imagen %>/<%= ecoActividad.descripcion %>/<%= ecoActividad.estado %>" class="btn btn-success">
+                            <a href="/modificar/<%= ecoActividad.id %>/<%= ecoActividad.nombreEcoActividad %>/<%= ecoActividad.diaEcoActividad %>/<%= ecoActividad.mesEcoActividad %>/<%= ecoActividad.anoEcoActividad %>/<%= ecoActividad.horaInicioEcoActividad %>/<%= ecoActividad.horaFinEcoActividad %>/<%= ecoActividad.ubicacionEcoActividad %>/<%= ecoActividad.departamentoEcoActividad %>/<%= ecoActividad.detallesEcoActividad %>/<%= ecoActividad.nombreEncargado %>/<%= ecoActividad.apellidoEncargado %>/<%= ecoActividad.dniEncargado %>/<%= ecoActividad.numeroEncargado %>/<%= ecoActividad.gmaiEncargado %>/<%= ecoActividad.estado%>" class="btn btn-success">
                                 MODIFICAR
                             </a>
-                            <a href="/desable/<%= ecoActividad.id %>/<%= ecoActividad.titulo %>/<%= ecoActividad.autor %>/<%= ecoActividad.imagen %>/<%= ecoActividad.descripcion %>/<%= ecoActividad.estado %>" class="btn btn-danger">
-                                RECHASAR
+                            <a href="/desable/<%= ecoActividad.id %>/<%= ecoActividad.nombreEcoActividad %>/<%= ecoActividad.diaEcoActividad %>/<%= ecoActividad.mesEcoActividad %>/<%= ecoActividad.anoEcoActividad %>/<%= ecoActividad.horaInicioEcoActividad %>/<%= ecoActividad.horaFinEcoActividad %>/<%= ecoActividad.ubicacionEcoActividad %>/<%= ecoActividad.departamentoEcoActividad %>/<%= ecoActividad.detallesEcoActividad %>/<%= ecoActividad.nombreEncargado %>/<%= ecoActividad.apellidoEncargado %>/<%= ecoActividad.dniEncargado %>/<%= ecoActividad.numeroEncargado %>/<%= ecoActividad.gmaiEncargado %>" class="btn btn-danger">
+                                RECHAZAR
                             </a>
                         </div>
                     </div>
@@ -39,5 +42,8 @@
         <% } %>
         
     <% }) %>
+
+    <a class="btn btn-primary" href="/all-ecoActividades ">Ver todas las Eco Actividades</a>
+
 </body>
 </html>
