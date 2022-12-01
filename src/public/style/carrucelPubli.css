@@ -23,7 +23,6 @@ html, body {
 
 /* este estaba en otro */
 .publicidad h1{
- 
   margin-bottom: 40vh;
 }
 
@@ -34,7 +33,7 @@ html, body {
   padding: 30px 10px;
   font-family: 'DM Sans', sans-serif;
   transition: background .4s ease-in;
-  background-color: #c394f8;
+
 }
 
 input[type=radio] {
@@ -53,7 +52,7 @@ input[type=radio] {
 }
 
 .container {
-  width: 100%;
+  width: 100vw;
   max-width: 800px;
   max-height: 600px;
   height: 100%;

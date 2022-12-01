@@ -8,9 +8,16 @@
   </head>
   <body>
     <%- include('partials/navigation.ejs') %>
-
-    <div class="Preguntas">
-      <h1>INICIO</h1>
+    <header>
+      <h3>1. Consumo de Artefactos Electronicos</h3>
+      <h2>En este primer apartado se estimaran las emisiones por el consumo de energia electrica </h2>
+      <h2>de los artefactos que utiliza diariamente en sus actividades.</h2>
+    </header>
+    <div class="calculadora">
+      <div class="gif">
+        <img src="https://www.gifsanimados.org/data/media/56/computadora-y-ordenador-imagen-animada-0030.gif" border="0" alt="computadora-y-ordenador-imagen-animada-0030" />
+      </div>
+      <div class="Preguntas">
       <section id="p0">
         <h2>¿Tiene artefactos electronicos?</h2>
         <label> <input type="radio" value="1" name="p0" /> Si tengo </label>
@@ -19,14 +26,7 @@
       <section>
         <h2>1. Indique cuantas horas en promedio los utiliza</h2>
         <label>
-          <input
-            type="number"
-            values="1"
-            name="p1"
-            id="p1"
-            onclick="respuesta(1,this)"
-          />
-          PC de escritorio
+          <input type="number" values="1" name="p1" id="p1"/>PC de escritorio
         </label>
         <label>
           <input
@@ -34,7 +34,7 @@
             values="2"
             name="p2"
             id="p2"
-            onclick="respuesta(2,this)"
+            
           />
           PC portatil
         </label>
@@ -44,7 +44,7 @@
             values="3"
             name="p3"
             id="p3"
-            onclick="respuesta(3,this)"
+            
           />
           Televisor
         </label>
@@ -57,7 +57,7 @@
             value="1"
             name="p4"
             id="p4"
-            onclick="respuesta(4,this)"
+            onclick="respuesta(2,this)"
           />
           Clase A+
         </label>
@@ -67,7 +67,7 @@
             value="2"
             name="p4"
             id="p4"
-            onclick="respuesta(4,this)"
+            onclick="respuesta(2,this)"
           />
           Clase A
         </label>
@@ -77,7 +77,7 @@
             value="3"
             name="p4"
             id="p4"
-            onclick="respuesta(4,this)"
+            onclick="respuesta(2,this)"
           />
           Clase B
         </label>
@@ -88,9 +88,9 @@
           <input
             type="radio"
             value="1"
-            name="p5"
-            id="p5"
-            onclick="respuesta(5,this)"
+            name="p7"
+            id="p7"
+            onclick="respuesta(3,this)"
           />
           Automatico
         </label>
@@ -98,9 +98,9 @@
           <input
             type="radio"
             value="2"
-            name="p5"
-            id="p5"
-            onclick="respuesta(5,this)"
+            name="p7"
+            id="p7"
+            onclick="respuesta(3,this)"
           />
           Automatico con calentamiento de agua
         </label>
@@ -108,9 +108,9 @@
           <input
             type="radio"
             value="3"
-            name="p5"
-            id="p5"
-            onclick="respuesta(5,this)"
+            name="p7"
+            id="p7"
+            onclick="respuesta(3,this)"
           />
           Semiautomatico
         </label>
@@ -121,9 +121,9 @@
           <input
             type="number"
             values="1"
-            name="p6"
-            id="p6"
-            onclick="respuesta(6,this)"
+            name="p8"
+            id="p8"
+            
           />
           Cantidad de veces a la semana
         </label>
@@ -131,9 +131,9 @@
           <input
             type="number"
             values="2"
-            name="p7"
-            id="p7"
-            onclick="respuesta(7,this)"
+            name="p9"
+            id="p9"
+            
           />
           Horas de uso al dia
         </label>
@@ -147,9 +147,9 @@
           <input
             type="number"
             value="1"
-            name="p8"
-            id="p8"
-            onclick="respuesta(8,this)"
+            name="p10"
+            id="p10"
+            
           />
           minutos
         </label>
@@ -161,9 +161,9 @@
           <input
             type="number"
             value="1"
-            name="p9"
-            id="p9"
-            onclick="respuesta(9,this)"
+            name="p11"
+            id="p11"
+            
           />
           minutos
         </label>
@@ -174,9 +174,9 @@
           <input
             type="number"
             values="1"
-            name="p10"
-            id="p10"
-            onclick="respuesta(10,this)"
+            name="p12"
+            id="p12"
+           
           />
           Focos
         </label>
@@ -184,24 +184,133 @@
           <input
             type="number"
             values="2"
-            name="p11"
-            id="p11"
-            onclick="respuesta(11,this)"
+            name="p13"
+            id="p13"
+            
           />
           Lamparas
         </label>
       </section>
     </div>
-    <button onclick="corregir()">CALCULAR</button>
-    <!--<button href="#"  onClick=
-    "if (document.getElementById('p1').value>0){
-     window.location='#calcu1';
-    }else alert('¿Cuántas horas?');">SIGUIENTE</button>-->
-    <h2>Resultados: <span id="resultado"></span></h2>
-    <form action="/calculadora">
-      <button>CANCELAR</button>
-    </form>
-
+  </div>
+    <header>
+      <h3>2. Consumo Calefaccion y Refrigeracion</h3>
+        <h2>En este apartado se estimaran las emisiones asociadas al consumo de gas y/o energia </h2>
+        <h2>electrica para la climatizacion de las oficinas.</h2>
+    </header>
+    <div class="Preguntas">
+      <h3> Calefaccion en Invierno</h3>
+     <section>
+        <h2>1. ¿Utiliza estufa a gas?</h2>
+        <label>
+          <input type="radio" value="1" name="estufa" onclick="respuesta(4,this)"> Si
+        </label>
+        <label>
+          <input type="radio" value="2" name="estufa" onclick="respuesta(4,this)"> No
+        </label>
+        <h2> ¿Cuantas horas al dia?</h2>
+        <label>
+          <input type="number" id="p14" min="0" max="24">
+        </label>
+     </section>
+      <section>
+        <h2>2. ¿Utiliza caloventor electrico?</h2>
+        <label>
+          <input type="radio" value="1" name="caloventor" onclick="respuesta(5,this)"> Si
+        </label>
+        <label>
+          <input type="radio" value="2" name="caloventor" onclick="respuesta(5,this)"> No
+        </label>
+        <h2> ¿Cuantas horas al dia?</h2>
+        <label>
+          <input type="number" id="p15" min="0" max="24">
+        </label>
+      </section>
+  
+      <h3>Refrigeracion en Verano </h3>
+      <section>
+        <h2>3. ¿Utiliza ventilador?</h2>
+        <label>
+          <input type="radio" value="1" name="ventilador" onclick="respuesta(6,this)"> Si
+        </label>
+        <label>
+          <input type="radio" value="2" name="ventilador" onclick="respuesta(6,this)">No
+        </label>
+        <h2> ¿Cuantas horas al dia?</h2>
+        <label>
+          <input type="number" id="p16" min="0" max="24">
+        </label>
+      </section>
+      <section id="p0">
+        <h2>4. ¿Utiliza aire acondicionado?</h2>
+        <label>
+          <input type="radio" value="1" name="aire" onclick="respuesta(7,this)"> Si
+        </label>
+        <label>
+          <input type="radio" value="2" name="aire" onclick="respuesta(7,this)"> No
+        </label>
+        <h2> ¿Cuantas horas al dia?</h2>
+        <label>
+          <input type="number" id="p17" min="0" max="24">
+        </label>
+      </section>
+    </div>
+    <header>
+      <h3>3. Consumo Combustible por Transporte</h3>
+      <h2>En este apartado se estimaran las emisiones por el consumo de combustible, a partir de los kilometros
+       totales(Km) </h2>
+      <h2>que realiza en el dia para trasladarse de su casa a otro lugar, en el transcurso de un año.</h2>
+    </header>
+    <div class="calculadora">
+      <div class="gif">
+        <img src="https://www.gifsanimados.org/data/media/67/coche-y-automovil-imagen-animada-0446.gif" border="0"
+        alt="coche-y-automovil-imagen-animada-0446" />
+      </div>
+     <div class="Preguntas">
+      <section>
+        <h2>1. ¿Que medio de transporte utiliza?</h2>
+        <label>
+          <input type="radio" value="1" name="transporte" onclick="respuesta(8,this)"> Vehiculo a Nafta
+        </label>
+        <label>
+          <input type="radio" value="2" name="transporte" onclick="respuesta(8,this)"> Vehiculo Diesel (gasolero)
+        </label>
+        <label>
+          <input type="radio" value="3" name="transporte" onclick="respuesta(8,this)"> Moto
+        </label>
+        <label>
+          <input type="radio" value="4" name="transporte" onclick="respuesta(8,this)"> Colectivo
+        </label>
+        <h2> ¿Cuantas veces viaja a la semana?</h2>
+        <label>
+          <input type="number" id="p18" min="0" max="100">
+        </label>
+        <h2> ¿Cuantos km recorre ?</h2>
+        <label>
+          <input type="number" id="p19" min="0" max="100">
+        </label>
+      </section>
+    </div>
+  </div>
+    <div clase="titulos">
+      <section>
+        <h2>HUELLA</h2>
+        <h2><span name="total" id="total">0.00</span></h2>
+        <div id="Progress_Status">
+          <div id="myprogressBar"></div>
+        </div>
+        <h2><span id="porsentaje"> </span></h2><br>
+        <button onclick="final()">RESULTADO FINAL</button> <br><br><br>
+        <h2><span id="text"></span></h2>
+        <H2>¿Quieres mejorar tu huella de carbono?</H2>
+        <form action="/recomendaciones">
+          <button>SI</button>
+        </form>
+      </section>
+      <form action="/calculadora">
+        <button>ATRAS</button>
+      </form>
+    </div>
     <script src="../scripts/calculos.js"></script>
   </body>
 </html>

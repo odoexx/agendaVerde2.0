@@ -9,17 +9,44 @@
   <body>
     <%- include('partials/navigation.ejs') %>
 
-    <div class="bienvenida">
-      <h1>Eco-huella</h1>
-      <h2>Calcula tu huella de carbono</h2>
+    <div class="calculadora">
       <div class="logoHuella">
-        <img src="./img/EcoHuella.png" alt="logo" />
-        <form action="/cuestionario">
-          <button>SIGUIENTE</button>
-        </form>
+        <img src="../img/EcoHuella2.png" alt="logo">
+        <a href="#" class="botonModal">¿Que es la huella de Carbono?</a>
       </div>
+      
+      <div class="titulos">
+        <h1>ECO-HUELLA </h1>
+        <h3>Calcula tu huella de carbono personal</h3>
+        <a href="/cuestionario">COMENZEMOS</a>
+      </div>
+      <section class="modal ">
+        <div class="modal__container">
+          <h2 class="modal__title">¿HUELLA DE CARBONO?</h2>
+          <p class="modal__paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nobis nisi
+            quibusdam doloremque expedita quae ipsam accusamus quisquam quas, culpa tempora. Veniam consectetur deleniti
+            maxime.</p>
+          <a href="#" class="modal__close">X</a>
+        </div>
+      </section>
+  
     </div>
 
     <%- include('partials/toast.ejs')%>
   </body>
+  <script>
+    const openModal = document.querySelector('.botonModal');
+    const modal = document.querySelector('.modal');
+    const closeModal = document.querySelector('.modal__close');
+
+    openModal.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.classList.add('modal--show');
+    });
+
+    closeModal.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.classList.remove('modal--show');
+    });
+  </script>
 </html>

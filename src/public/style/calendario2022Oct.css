@@ -1,0 +1,57 @@
+.conteiner{
+    display: flex;
+}
+
+.calendario{
+    text-align: center;
+    width: 500px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.calendarioHeader{
+    display: flex;
+    justify-content: center;
+}
+
+.calendarioHeader h1{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.calendarioHeader button{
+    border-radius: 30px;
+}
+
+.btnHeader{
+    font-size: 50px;
+}
+
+ol{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 0px;
+}
+
+.first-day{
+    grid-column-start: 6;
+}
+
+
+.day-name{
+    background: #7ac78d;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+ol button{
+    border: none;
+    font-size: 30px;
+}
+
+.ecoActividades{
+    text-align: center;
+    width: 90%;
+    height: 100%;
+}

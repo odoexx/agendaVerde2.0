@@ -15,7 +15,6 @@
     </div>
 
     <div class="bienvenida">
-        <h2>Bienvenido</h2>
         <h1>AGENDA VERDE</h1>
         <img src="./img/logo.png" alt="logo">
     </div>
@@ -24,7 +23,9 @@
     <h2 class="tituloCarrucel">Otros proyectos en camino</h2>
     <%- include('partials/carrucelPubli.ejs') %>
 
-    <!-- inicio de secion -->
+
+    
+    <!-- inicio de sesion -->
     <div class="overlay" id="overlay">
         <div class="popup" id="popup">
             <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"> <i class="bi bi-x"></i> </a>
@@ -41,28 +42,6 @@
 
     <%- include('partials/toast.ejs')%>
 
-    
-    <!-- <div class="container p-4">
-        <div class="row">
-            < ecoActividad.forEach(function (ecoActividad) { > en donde va <> estos simbolos va un simbolo de porcentaje dentro
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-header">
-                            <= ecoActividad.titulo > / <= ecoActividad.autor >
-                        </div>
-                        <div class="card-body">
-                            <p><= ecoActividad.descripcion ></p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="/delete/<= ecoActividad.id >" class="btn btn-danger">
-                                Eliminar
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div }) >
-            </div>
-        </div> -->
         <script>
             var btnAbrirPopup = document.getElementById('btn-abiri-popup');
             var overlay = document.getElementById('overlay');
