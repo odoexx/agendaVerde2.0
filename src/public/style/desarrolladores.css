@@ -7,7 +7,6 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: #efefef;
     flex-wrap: wrap;
 }
 .mision{
@@ -28,6 +27,21 @@
 }
 
 .card:hover {
+    box-shadow: 0 5px 15px rgba(3, 89, 92, .5);
+    transform: translateY(-15px);
+}
+
+.card-mision{
+    width: 50vw;
+    position: relative;
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: .5s;
+    margin: 20px;
+}
+
+.card-mision:hover {
     box-shadow: 0 5px 15px rgba(3, 89, 92, .5);
     transform: translateY(-15px);
 }

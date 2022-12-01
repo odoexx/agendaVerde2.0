@@ -8,6 +8,8 @@
 <body>
     <%- include('partials/navigation.ejs') %>
 
+    <a class="btn btn-primary" href="/all-ecoActividades ">Ver todas las Eco Actividades</a>
+
     <% ecoActividad.forEach(function (ecoActividad) { %>
 
         <% if(ecoActividad.estado == "pendiente"){ %>
@@ -42,8 +44,6 @@
         <% } %>
         
     <% }) %>
-
-    <a class="btn btn-primary" href="/all-ecoActividades ">Ver todas las Eco Actividades</a>
 
 </body>
 </html>

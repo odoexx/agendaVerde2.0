@@ -4,17 +4,36 @@
 }
 
 body{
-    background: #efefef;
+    background: beige;
 }
 
 .navbar{
-    background-color: #71cc87;
+    background-image: url("../img/navigation.jpg");
+    height: 15vh;
+    position: relative;
 }
 
-.navbar-brand img{
-    width: 45px;
+#navbarNav{
+    justify-content: center;
+    text-align: center;
 }
 
 .nav-item{
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-left: 50px;
     font-size: 25px;
+
+}
+.nav-link{
+    color: #ccc;
+    letter-spacing: 2px;
+    font-size: 700;
+}
+
+.nav-link:hover{
+    background: #dcdde1 !important;
+    color: #262626 !important;
+    border-radius: 5px;
+    transition: all 0.6s ease 0s;
 }

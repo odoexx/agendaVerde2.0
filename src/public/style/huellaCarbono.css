@@ -2,12 +2,61 @@
     box-sizing: border-box;
     font-family: 'Balsamic Sans';
 }
-.bienvenida{
+header{
     text-align: center;
+    background-image: linear-gradient(-60deg, #166439 0%, #afe99ec2 100%);;
+    color: #fff;
+    padding: 10px;
 }
-.logoHuella img{
-    width: 300px;
-    display: block;
+.calculadora{
+    display: flex;
+    margin: 2%;
+    width:70%;
+}
+h3{
+    margin-top: 10px;
+    font-size:230%;
+    margin: 3%; 
+}
+
+.calculadora h1{
+    font-size: 100px;
+   
+}
+.calculadora img {
+    width: 25vw;
+}
+.gif img{
+    width: 25vw;  
+    
+}
+.titulos{
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    text-align: center;  
+}
+.titulos a,.calculadora a:hover{
+    background: #000;
+    color: #fff;
+}
+
+.titulos a, .logoHuella a {
+    background-image: linear-gradient(-60deg, #166439 0%, #afe99ec2 100%);
+    width: 70%;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #000;
+    
+    font-size:200%; 
+    margin: auto;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 10px;
+
+}
+.titulos section{
     margin: auto;
 }
 .Preguntas {
@@ -16,10 +65,10 @@
  padding: 20px;
 }
 section{
-    border: 2px solid #71cc87;
+    border: 8px solid #302d2dda;
     border-radius: 7px;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 10vh;
+    margin: 2vh;
 }
 label{
     display: block;
@@ -34,15 +83,18 @@ label:hover{
     background: #96c480;
 }
 button{
-    width: 80%;
+    width: 30%;
+    height: 100%;
     display: block;
     margin: auto;
-    padding: 10px;
 
-    background-color: #76d776;
+    background-image: linear-gradient(-60deg, #166439 0%, #afe99ec2 100%);
     border: none;
     cursor: pointer;
-    border-radius: 20px;
+    border-radius: 40px;
+    margin-top: 10px;
+   
+    font-size:150%; 
 }
 button:hover{
     background: #000;
@@ -51,7 +103,75 @@ button:hover{
 h2{
     text-align: center;
 }
-#resultado{
+#resultado,#total{
     font-size: 30px;
     color: darkgreen;
 }
+/*ventana modal*/
+.modal__close{
+    text-decoration: none;
+    color: #fff;
+    background-color: #F26250;
+    padding: 1em 3em;
+    border: 1px solid ;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 300;
+    transition: background-color .3s;
+}
+
+.modal__close:hover{
+    color: #F26250;
+    background-color: #fff;
+}
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111bd;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s .9s;
+    --transform: translateY(-100vh);
+    --transition: transform .8s;
+
+}
+
+.modal--show{
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .6s;
+    --transform: translateY(0);
+    --transition: transform .8s .8s;
+}
+
+.modal__container{
+    margin: auto;
+    width: 90vw;
+    max-width: 600px;
+    max-height: 90%;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 3em 2.5em;
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    grid-auto-columns: 100%;
+    transform: var(--transform);
+    transition:var(--transition);
+}
+/* varras de progreso*/
+#Progress_Status {
+    width: 50vw;
+    background-color: #ddd;
+    width: auto;
+  }
+    
+  #myprogressBar {
+    width: 1vh;
+    height: 30px;
+    background-color: #76d776;
+  }

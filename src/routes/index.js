@@ -11,6 +11,19 @@ router.get('/', (req, res) => {
     res.render('index.ejs');
 });
 
+// inicio meses del calendario
+router.get('/calendario2022Oct', (req, res) => {
+    res.render('calendario2022Oct', {
+        ecoActividad
+    });
+});
+
+router.get('/calendario2022Nov', (req, res) => {
+    res.render('calendario2022Nov', {
+        ecoActividad
+    });
+});
+
 router.get('/calendario', (req, res) => {
     res.render('calendario', {
         ecoActividad
@@ -23,13 +36,30 @@ router.get('/calendario2023Enero', (req, res) => {
     });
 });
 
+router.get('/calendario2023Febrero', (req, res) => {
+    res.render('calendario2023Febrero', {
+        ecoActividad
+    });
+});
+
+router.get('/calendario2023Marzo', (req, res) => {
+    res.render('calendario2023Marzo', {
+        ecoActividad
+    });
+});
+//fin de los meses del calendario
+
 router.get('/calculadora', (req,res) => {
     res.render('huellaCarbono');
-})
+});
+
+router.get('/recomendaciones', (req,res) => {
+    res.render('recomendaciones');
+});
 
 router.get('/cuestionario', (req, res) => {
     res.render('cuestionario');
-})
+});
 
 router.get('/desarrolladores', (req, res) => {
     res.render('desarrolladores');
@@ -198,7 +228,7 @@ router.post('/new-entry', (req, res) => {
 
 //modificar datos
 router.post('/modificar', (req, res) => {
-    const {id, nombreEcoActividad, diaEcoActividad, mesEcoActividad, anoEcoActividad,
+    const { id, nombreEcoActividad, diaEcoActividad, mesEcoActividad, anoEcoActividad,
         horaInicioEcoActividad, horaFinEcoActividad, ubicacionEcoActividad, 
         departamentoEcoActividad, detallesEcoActividad, nombreEncargado, apellidoEncargado, 
         dniEncargado, numeroEncargado, gmaiEncargado, estado
@@ -208,7 +238,7 @@ router.post('/modificar', (req, res) => {
     if(!nombreEcoActividad || !diaEcoActividad || !mesEcoActividad || !anoEcoActividad || !horaInicioEcoActividad || 
         !horaFinEcoActividad || !ubicacionEcoActividad || !departamentoEcoActividad || 
         !detallesEcoActividad || !nombreEncargado || !apellidoEncargado || !dniEncargado || 
-        !numeroEncargado || !gmaiEncargado || !estado){
+        !numeroEncargado || !gmaiEncargado){
         res.status(400).send('Escribe todos los campos');
         return;
     }
@@ -231,11 +261,12 @@ router.post('/modificar', (req, res) => {
         gmaiEncargado : gmaiEncargado,
         estado: estado
     };
+
     
-    ecoActividad = ecoActividad.filter(ecoActividad => ecoActividad.id != id);
     
     ecoActividad.push(newEcoActividad);
     
+    ecoActividad = ecoActividad.filter(ecoActividad => ecoActividad.id != id);
     const jsonEcoActividad = JSON.stringify(ecoActividad);
     fs.writeFileSync('src/ecoActividades.json', jsonEcoActividad, 'utf-8');
     
@@ -252,7 +283,7 @@ router.post('/admin-page', (req, res) => {
         return;
     }
 
-    if(usuario=="admin" && password=="1234"){
+    if(usuario=="admin" && password=="123"){
         res.redirect('/admin-page');
     }else{
         res.send('usuario incorrecto');
