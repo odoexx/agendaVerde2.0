@@ -163,6 +163,7 @@ h2{
     transform: var(--transform);
     transition:var(--transition);
 }
+
 /* varras de progreso*/
 #Progress_Status {
     width: 50vw;

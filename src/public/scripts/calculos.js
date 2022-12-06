@@ -44,8 +44,7 @@ function corregir(){
     total1=total1+(56*Dias*0.08*Horas);
   }
      total1=total1+(pavaElectrica*4.56)+(microondas*1.118)+(focos*1.38)+(lampara*13.8);   
-    corregir2();
-    corregir3();
+    
 }
 // caloventor y estufa
 function corregir2(){
@@ -73,9 +72,11 @@ function corregir3(){
 }
 function final(){
   corregir();
+  corregir2();
+  corregir3();
   var porsentaje;
   total=total1+total2+total3;
-  document.getElementById("total").innerHTML= parseInt(total,10)+'  kgCO2';
+  document.getElementById("total").innerHTML= total+'  kgCO2';
   porsentaje=(total*100)/12000;       
   var element = document.getElementById("myprogressBar");   
   var width = 1;

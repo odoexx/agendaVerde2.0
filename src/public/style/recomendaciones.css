@@ -1,0 +1,20 @@
+/*Carrusel de imagenes*/
+.carousel-item{
+    width: 100%;
+    height: 480px;
+    justify-content: center;
+
+}
+.carousel-item img{
+    width: 100%;
+    height: 100%;
+
+}
+.carousel-item h2, .carousel-item p{
+    color: black;
+    background-color: beige;
+
+}
+section h2{
+    text-align: justify;
+}
