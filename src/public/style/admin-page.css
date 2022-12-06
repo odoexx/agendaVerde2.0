@@ -1,0 +1,10 @@
+#boton{
+    float: right;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+
+.card{
+    display: grid;
+    box-sizing: var(100px);
+}
