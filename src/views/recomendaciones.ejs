@@ -4,6 +4,7 @@
     <%- include('partials/header.ejs') %>
 
     <link rel="stylesheet" href="../style/huellaCarbono.css">
+    <link rel="stylesheet" href="../style/recomendaciones.css">
     <title>Recomendaciones</title>
 </head>
 
@@ -15,12 +16,75 @@
         <h2>¡Cuando reduces tu carbono, dejas una huella diferente! </h2>
         <img src="https://www.gifsanimados.org/data/media/47/arbol-imagen-animada-0063.gif" border="0" alt="arbol-imagen-animada-0063" />
      
-      </header>
-      <section>
-        <h2>Aqui va los tips para la huella de carbono</h2>
-     </section>
+    </header>
+    <section>
+        <h2>Cuatro maneras de reducir tu huella de carbono</h2><br>
+        <h2>1.No dejes aparatos electrónicos enchufados. Desde el cargador del celular hasta el lavarropas, estos electrodomésticos son conocidos como 'vampiros de energía. Es una acción muy chiquita (desenchufarlos cuando no los estás usando) y que ayudan a ahorrar energía.</h2>
+        <h2>2. Usá más la bicicleta y/o el transporte público. Los autos son grandes contaminantes del medioambiente y si bien todos podemos entender la necesidad de movilizarnos, antes de sacar el auto pensá en la distancia que tenés que recorrer: ¿podés hacerla caminando? ¿quizá en bici? ¿y qué tal el transporte público?</h2> 
+        <h2>3. Eliminá el plástico de un uso de tu casa. Como su nombre lo indica, el plástico de un uso es aquel que no se puede reutilizar. Desde films que envuelven la comida hasta envases de productos comprados en el super. ¿Querés ir pasito más allá? Eliminá las bolsas plásticas y empezá a usar de tela. </h2>
+        <h2>4. No te olvides de las tres erres. En la lucha contra el cambio climático parece que la única posibilidad que tenemos es la de reciclar, sin embargo también es importante cambiar nuestros hábitos para reducir nuestros consumos y reutilizar.</h2>
+      </section>
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
 
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="../img/cambioClimatico.jpeg" alt="img1">
+            <div class="carousel-caption d-none d-md-block">
+              <h2>Cambio Climático. ¿Que es, cuales son sus causas y que puedes hacer para revertirlo?</h2>
+              <p>Los efectos del Cambio Climático se han visto acelerados por la actividad humana. De acuerdo a la ONU el cambio climatico
+                se refiere a las modificaciones a largo plazo de las temperaturas y los patrones climáticos.
+                Existen causas naturales y humanas. La quema de combustible fosil por parte de los vehículos o de la industria; los rellenos sanitarios que liberan metano; 
+                la agricultura y la ganadería (que también liberan este gas); y la quema de vegetación o biomasa. 
+                Además, “la tala de bosques a fin de crear granjas o pastos, o por otros motivos, provoca emisiones dado que cuando se talan sus árboles se libera el carbono que estos han estado almacenando”. Además, su destrucción limita la capacidad de la naturaleza para mantener las emisiones fuera de la atmósfera.
+                La ONU también responsabiliza al transporte, dado que “la mayoría de camiones, barcos y aeronaves funcionan con combustibles fósiles. Esto hace que el sector sea uno de los que más contribuye a generar gases de efecto invernadero”.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../img/incendios.jpg" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h2>Incendios Forestales</h2>
+              <p>Un incendio forestal es el fuego que se extiende sin planificación, sin gestión y sin control en terreno forestal o silvestre, afectando a combustibles vegetales, flora y fauna.
+                El 95% de los incendios forestales son producidos por la mano del hombre, siendo dentro de estos los principales escenarios fogatas, colillas de cigarrillos mal apagadas y el abandono de tierras.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../img/ciudad.jpeg" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h2>¿Que se necesita para que una ciudad sea sostenible?</h2>
+              <p>Una ciudad sostenible es en definitiva, un lugar que apunta al progreso del ambito economico y social preocupandose
+                por el uso del medio ambiente de forma que no contribuya a la emergencia climatica.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../img/energia.jpg" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h2>¿Que son las energias renovables?</h2>
+              <p>Consideradas sostenibles porque emiten menos gases de efecto invernadero, son una prioridad para combatir el calentamiento global.
+                La Organización de las Naciones Unidas (ONU) define las energías renovables como energía derivada de fuentes naturales que, a su vez, se reponen a un ritmo mayor del que se consumen.
+              </p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     <%- include('partials/toast.ejs')%>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
 </body>
 </html>
