@@ -11,9 +11,13 @@
     <div class="conteiner">
       <div class="calendario">
         <div class="calendarioHeader">
-          <a class="btnHeader" href="/calendario2023Enero">-</a>
+          <form action="/calendario2023Enero">
+            <button>-</button>
+          </form>
           <h1>Febrero 2023</h1>
-          <a class="btnHeader" href="/calendario2023Marzo">+</a>
+          <form action="/calendario2023Marzo">
+            <button>+</button>
+          </form>
         </div>
 
         <ol>
@@ -55,26 +59,26 @@
         </ol>
       </div>
       <div class="ecoActividades">
-        <% ecoActividad.forEach(function (ecoActividad) { %>
+      <% ecoActividad.forEach(function (ecoActividad) { %>
+        
+        <% if(ecoActividad.estado == "aceptado" && ecoActividad.mesEcoActividad == "Febrero" && ecoActividad.anoEcoActividad == "2023"){ %>
 
-          <% if(ecoActividad.estado == "aceptado" && ecoActividad.mesEcoActividad == "Febrero" && ecoActividad.anoEcoActividad == "2023"){ %>
-  
-            <div class="container p-4">
-              <div class="col-md-4">
-                  <div class="card">
-                      <div class="card-header">
-                          <%= ecoActividad.nombreEcoActividad %> / <%= ecoActividad.nombreEncargado %> <%= ecoActividad.apellidoEncargado %>
-                      </div>
-                      <div class="card-body">
-                          <p><%= ecoActividad.diaEcoActividad %>/<%= ecoActividad.mesEcoActividad %>/<%= ecoActividad.anoEcoActividad %>  </p>
-                          <p> inicio: <%= ecoActividad.horaInicioEcoActividad %> fin: <%= ecoActividad.horaFinEcoActividad %> </p>
-                          <p><%= ecoActividad.detallesEcoACtividad %></p>
-                      </div>
-                  </div>
-              </div>
+          <div class="container p-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <%= ecoActividad.nombreEcoActividad %> / <%= ecoActividad.nombreEncargado %> <%= ecoActividad.apellidoEncargado %>
+                    </div>
+                    <div class="card-body">
+                        <p><%= ecoActividad.diaEcoActividad %>/<%= ecoActividad.mesEcoActividad %>/<%= ecoActividad.anoEcoActividad %>  </p>
+                        <p> inicio: <%= ecoActividad.horaInicioEcoActividad %> fin: <%= ecoActividad.horaFinEcoActividad %> </p>
+                        <p><%= ecoActividad.detallesEcoACtividad %></p>
+                    </div>
+                </div>
+            </div>
           </div>
-  
-          <% } %>
+
+        <% } %>
           
       <% }) %>
       </div>

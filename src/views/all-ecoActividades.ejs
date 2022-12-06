@@ -2,45 +2,51 @@
 <html lang="en">
 <head>
     <%- include('partials/header.ejs') %>
+
+    <link rel="stylesheet" href="../style/admin-page.css">
     <title>Todas las eco Actividades</title>
 </head>
 <body>
     
     <%- include('partials/navigation.ejs') %>
 
-    <a class="btn btn-primary" href="/admin-page">Ver solo las Eco Actividades de estado pendiente</a>
+    <a class="btn btn-success" id="boton" href="/admin-page">Ver solo las Eco Actividades de estado pendiente</a>
 
-    <% ecoActividad.forEach(function (ecoActividad) { %>
+    <div class="cartas">
+
+        <% ecoActividad.forEach(function (ecoActividad) { %>
         
-        <div class="container p-4">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header">
-                        <%= ecoActividad.nombreEcoActividad %> / <%= ecoActividad.nombreEncargado %> <%= ecoActividad.apellidoEncargado %>
-                    </div>
-                    <div class="card-body">
-                        <p><%= ecoActividad.diaEcoActividad %>/<%= ecoActividad.mesEcoActividad %>/<%= ecoActividad.anoEcoActividad %>  </p>
-                        <p> inicio: <%= ecoActividad.horaInicioEcoActividad %> fin: <%= ecoActividad.horaFinEcoActividad %> </p>
-                        <p><%= ecoActividad.detallesEcoACtividad %></p>
-                        <p>DNI: <%= ecoActividad.dniEncargado %> Celular: <%= ecoActividad.numeroEncargado %> Email: <%= ecoActividad.gmaiEncargado %></p>
-                        <p>Estado: <%= ecoActividad.estado %></p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="/enable/<%= ecoActividad.id %>/<%= ecoActividad.nombreEcoActividad %>/<%= ecoActividad.diaEcoActividad %>/<%= ecoActividad.mesEcoActividad %>/<%= ecoActividad.anoEcoActividad %>/<%= ecoActividad.horaInicioEcoActividad %>/<%= ecoActividad.horaFinEcoActividad %>/<%= ecoActividad.ubicacionEcoActividad %>/<%= ecoActividad.departamentoEcoActividad %>/<%= ecoActividad.detallesEcoActividad %>/<%= ecoActividad.nombreEncargado %>/<%= ecoActividad.apellidoEncargado %>/<%= ecoActividad.dniEncargado %>/<%= ecoActividad.numeroEncargado %>/<%= ecoActividad.gmaiEncargado %>" class="btn btn-primary">
-                            ACEPTAR
-                        </a>
-                        <a href="/modificar/<%= ecoActividad.id %>/<%= ecoActividad.nombreEcoActividad %>/<%= ecoActividad.diaEcoActividad %>/<%= ecoActividad.mesEcoActividad %>/<%= ecoActividad.anoEcoActividad %>/<%= ecoActividad.horaInicioEcoActividad %>/<%= ecoActividad.horaFinEcoActividad %>/<%= ecoActividad.ubicacionEcoActividad %>/<%= ecoActividad.departamentoEcoActividad %>/<%= ecoActividad.detallesEcoActividad %>/<%= ecoActividad.nombreEncargado %>/<%= ecoActividad.apellidoEncargado %>/<%= ecoActividad.dniEncargado %>/<%= ecoActividad.numeroEncargado %>/<%= ecoActividad.gmaiEncargado %>/<%= ecoActividad.estado%>" class="btn btn-success">
-                            MODIFICAR
-                        </a>
-                        <a href="/desable/<%= ecoActividad.id %>/<%= ecoActividad.nombreEcoActividad %>/<%= ecoActividad.diaEcoActividad %>/<%= ecoActividad.mesEcoActividad %>/<%= ecoActividad.anoEcoActividad %>/<%= ecoActividad.horaInicioEcoActividad %>/<%= ecoActividad.horaFinEcoActividad %>/<%= ecoActividad.ubicacionEcoActividad %>/<%= ecoActividad.departamentoEcoActividad %>/<%= ecoActividad.detallesEcoActividad %>/<%= ecoActividad.nombreEncargado %>/<%= ecoActividad.apellidoEncargado %>/<%= ecoActividad.dniEncargado %>/<%= ecoActividad.numeroEncargado %>/<%= ecoActividad.gmaiEncargado %>" class="btn btn-danger">
-                            RECHAZAR
-                        </a>
+            <div class="container p-4">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <%= ecoActividad.nombreEcoActividad %> / <%= ecoActividad.nombreEncargado %> <%= ecoActividad.apellidoEncargado %>
+                        </div>
+                        <div class="card-body">
+                            <p><%= ecoActividad.diaEcoActividad %>/<%= ecoActividad.mesEcoActividad %>/<%= ecoActividad.anoEcoActividad %>  </p>
+                            <p> inicio: <%= ecoActividad.horaInicioEcoActividad %> fin: <%= ecoActividad.horaFinEcoActividad %> </p>
+                            <p><%= ecoActividad.detallesEcoACtividad %></p>
+                            <p>DNI: <%= ecoActividad.dniEncargado %> Celular: <%= ecoActividad.numeroEncargado %> Email: <%= ecoActividad.gmaiEncargado %></p>
+                            <p>Estado: <%= ecoActividad.estado %></p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="/enable/<%= ecoActividad.id %>/<%= ecoActividad.nombreEcoActividad %>/<%= ecoActividad.diaEcoActividad %>/<%= ecoActividad.mesEcoActividad %>/<%= ecoActividad.anoEcoActividad %>/<%= ecoActividad.horaInicioEcoActividad %>/<%= ecoActividad.horaFinEcoActividad %>/<%= ecoActividad.ubicacionEcoActividad %>/<%= ecoActividad.departamentoEcoActividad %>/<%= ecoActividad.detallesEcoActividad %>/<%= ecoActividad.nombreEncargado %>/<%= ecoActividad.apellidoEncargado %>/<%= ecoActividad.dniEncargado %>/<%= ecoActividad.numeroEncargado %>/<%= ecoActividad.gmaiEncargado %>" class="btn btn-primary">
+                                ACEPTAR
+                            </a>
+                            <a href="/modificar/<%= ecoActividad.id %>/<%= ecoActividad.nombreEcoActividad %>/<%= ecoActividad.diaEcoActividad %>/<%= ecoActividad.mesEcoActividad %>/<%= ecoActividad.anoEcoActividad %>/<%= ecoActividad.horaInicioEcoActividad %>/<%= ecoActividad.horaFinEcoActividad %>/<%= ecoActividad.ubicacionEcoActividad %>/<%= ecoActividad.departamentoEcoActividad %>/<%= ecoActividad.detallesEcoActividad %>/<%= ecoActividad.nombreEncargado %>/<%= ecoActividad.apellidoEncargado %>/<%= ecoActividad.dniEncargado %>/<%= ecoActividad.numeroEncargado %>/<%= ecoActividad.gmaiEncargado %>/<%= ecoActividad.estado%>" class="btn btn-success">
+                                MODIFICAR
+                            </a>
+                            <a href="/desable/<%= ecoActividad.id %>/<%= ecoActividad.nombreEcoActividad %>/<%= ecoActividad.diaEcoActividad %>/<%= ecoActividad.mesEcoActividad %>/<%= ecoActividad.anoEcoActividad %>/<%= ecoActividad.horaInicioEcoActividad %>/<%= ecoActividad.horaFinEcoActividad %>/<%= ecoActividad.ubicacionEcoActividad %>/<%= ecoActividad.departamentoEcoActividad %>/<%= ecoActividad.detallesEcoActividad %>/<%= ecoActividad.nombreEncargado %>/<%= ecoActividad.apellidoEncargado %>/<%= ecoActividad.dniEncargado %>/<%= ecoActividad.numeroEncargado %>/<%= ecoActividad.gmaiEncargado %>" class="btn btn-danger">
+                                RECHAZAR
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        
-    <% }) %>
+            
+        <% }) %>
+
+    </div>
 
 </body>
 </html>
