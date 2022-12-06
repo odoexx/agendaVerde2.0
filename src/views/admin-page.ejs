@@ -9,15 +9,15 @@
 <body>
     <%- include('partials/navigation.ejs') %>
 
-    <a class="btn btn-success" id="boton" href="/all-ecoActividades">Ver todas las Eco Actividades</a>
-
+    <a class="btn btn-primary" href="/all-ecoActividades ">Ver todas las Eco Actividades</a>
+    
     <% ecoActividad.forEach(function (ecoActividad) { %>
 
         <% if(ecoActividad.estado == "pendiente"){ %>
 
-            <div class="container p-4">
-                <div class="col">
-                    <div class="card">
+            <div class="container p-4" >
+                <div class="col-md-4" style="display: flex;">
+                    <div class="card" >
                         <div class="card-header">
                             <%= ecoActividad.nombreEcoActividad %> / <%= ecoActividad.nombreEncargado %> <%= ecoActividad.apellidoEncargado %>
                         </div>

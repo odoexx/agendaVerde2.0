@@ -55,3 +55,29 @@ ol button{
     width: 90%;
     height: 100%;
 }
+/*  estilo de llas targeta actividades*/
+.container__cards{
+    width: 100%;
+    display: flex;
+    background:#7ac78d;;
+    
+}
+.card{
+    width: 40%;
+    margin: 8px;
+
+    border-radius: 6px;
+    overflow: hidden;
+    background: #fff;
+    cursor: default;
+    transition: all 400ms ease;
+}
+.card:hover {
+    box-shadow: 0 5px 15px rgba(3, 89, 92, .5);
+    transform: translateY(-15px);
+}
+
+
+.card .contenido p{
+    font-size: 4vh;
+}
